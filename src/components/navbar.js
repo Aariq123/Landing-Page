@@ -57,7 +57,7 @@ const Navbar = () => {
                             placeholder='Search' value={searchBar} 
                             onChange={(e)=>{
                                 setUserSearch(true)
-                                searching(e.target.value)
+                                searching(e.target.value.toLowerCase())
                             }}
                             />
                             <i onClick={()=>{setSearchBarDrop(!searchBarDrop)}} className="fa-solid fa-magnifying-glass"></i>
