@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/.github.io/Landing-Page/static/css/main.d5972eef.css",
-    "main.js": "/.github.io/Landing-Page/static/js/main.03bb7665.js",
-    "static/media/ligma.jpg": "/.github.io/Landing-Page/static/media/ligma.7e2d304e7f25746e3e4e.jpg",
-    "static/media/hehe.jpg": "/.github.io/Landing-Page/static/media/hehe.db006e37210cef6a860e.jpg",
-    "index.html": "/.github.io/Landing-Page/index.html",
-    "main.d5972eef.css.map": "/.github.io/Landing-Page/static/css/main.d5972eef.css.map",
-    "main.03bb7665.js.map": "/.github.io/Landing-Page/static/js/main.03bb7665.js.map"
+    "main.css": "/Landing-Page/static/css/main.d5972eef.css",
+    "main.js": "/Landing-Page/static/js/main.7529d323.js",
+    "static/media/ligma.jpg": "/Landing-Page/static/media/ligma.7e2d304e7f25746e3e4e.jpg",
+    "static/media/hehe.jpg": "/Landing-Page/static/media/hehe.db006e37210cef6a860e.jpg",
+    "index.html": "/Landing-Page/index.html",
+    "main.d5972eef.css.map": "/Landing-Page/static/css/main.d5972eef.css.map",
+    "main.7529d323.js.map": "/Landing-Page/static/js/main.7529d323.js.map"
   },
   "entrypoints": [
     "static/css/main.d5972eef.css",
-    "static/js/main.03bb7665.js"
+    "static/js/main.7529d323.js"
   ]
 }
