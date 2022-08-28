@@ -47,7 +47,7 @@ const Navbar = () => {
     return (
         <nav onClick={closeSidebarTwo}ref={navRef}>
         <div onClick={searchDrop}>
-        <div className="header" onMouseOver={closeSubmenu}>
+        <div className="header" onPointerOver={closeSubmenu}>
             <div className="heading">
                 <Link onClick={()=>setUserSearch(false)} to='/home'><img src={require('../images/tvector.jpg')} alt="" /></Link>
                     <div className='search-div'>
@@ -78,12 +78,12 @@ const Navbar = () => {
             </div>
 
             <div className={openNav ? 'actual-links open' : 'actual-links'} ref={actualLinksRef}>
-                <Link onClick={()=>setUserSearch(false)} className='link-list' onMouseOver={openHoverMenu}  to='/product/laptop'>Laptop</Link>
-                <Link onClick={()=>setUserSearch(false)} className='link-list' onMouseOver={openHoverMenu}  to='/product/tablet'>Tablet</Link>
-                <Link onClick={()=>setUserSearch(false)} className='link-list' onMouseOver={openHoverMenu}  to='/product/camera'>Camera</Link>
-                <Link onClick={()=>setUserSearch(false)} className='link-list' onMouseOver={openHoverMenu}  to='/product/software'>Software</Link>
-                <Link onClick={()=>setUserSearch(false)} className='link-list' onMouseOver={openHoverMenu} to='/product/monitor'>Monitor</Link>
-                <Link onClick={()=>setUserSearch(false)} className='link-list' onMouseOver={openHoverMenu}  to='/product/desktop'>Desktop</Link>
+                <Link onClick={()=>setUserSearch(false)} className='link-list' onPointerOver={openHoverMenu}  to='/product/laptop'>Laptop</Link>
+                <Link onClick={()=>setUserSearch(false)} className='link-list' onPointerOver={openHoverMenu}  to='/product/tablet'>Tablet</Link>
+                <Link onClick={()=>setUserSearch(false)} className='link-list' onPointerOver={openHoverMenu}  to='/product/camera'>Camera</Link>
+                <Link onClick={()=>setUserSearch(false)} className='link-list' onPointerOver={openHoverMenu}  to='/product/software'>Software</Link>
+                <Link onClick={()=>setUserSearch(false)} className='link-list' onPointerOver={openHoverMenu} to='/product/monitor'>Monitor</Link>
+                <Link onClick={()=>setUserSearch(false)} className='link-list' onPointerOver={openHoverMenu}  to='/product/desktop'>Desktop</Link>
             </div>
 
             <div className={submenuShow ? "submenu show" : 'submenu'} ref={leftRef}>

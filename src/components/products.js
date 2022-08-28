@@ -8,7 +8,7 @@ const Products = () => {
     const { category } = useParams()
 
     return ( 
-       <div onClick={searchDrop} onMouseOver={closeSubmenu} >
+       <div onClick={searchDrop} onPointerOver={closeSubmenu} >
         <div onClick={closeSidebarTwo}>
         <h1>All {category+'s'}</h1>
             <div className="products-container">

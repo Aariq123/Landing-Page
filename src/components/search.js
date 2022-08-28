@@ -9,7 +9,7 @@ const Search = () => {
 
 
     return ( 
-       <div className="search-div" onMouseOver={closeSubmenu} onClick={searchDrop}>
+       <div className="search-div" onPointerOver={closeSubmenu} onClick={searchDrop}>
         <div onClick={closeSidebarTwo}>
         <div className="products-container">
         {

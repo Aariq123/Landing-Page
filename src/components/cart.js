@@ -8,7 +8,7 @@ const Cart = () => {
   
     return ( 
         <div className='cart-container' onClick={closeSidebarTwo} 
-        onMouseOver={closeSubmenu}>
+        onPointerOver={closeSubmenu}>
           <div onClick={searchDrop}>
           {cart.length == 0 && 
             <h1 className='no-items'>No items selected...</h1>}

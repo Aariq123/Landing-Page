@@ -36,7 +36,7 @@ const Hero = () => {
 
     return ( 
             <div className='hero' onClick={closeSidebarTwo} 
-            onMouseOver={closeSubmenu}>
+            onPointerOver={closeSubmenu}>
                 <div onClick={searchDrop}>
                 <h3>Our latest Products</h3>
                 <div className='display-container'>

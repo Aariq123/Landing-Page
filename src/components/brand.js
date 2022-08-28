@@ -8,7 +8,7 @@ const Brand = () => {
     const { brand } = useParams()
 
     return ( 
-       <div onClick={closeSidebarTwo} onMouseOver={closeSubmenu} >
+       <div onClick={closeSidebarTwo} onPointerOver={closeSubmenu} >
             <div className="products-container">
                 {cartItems.map(tech=> {
                 if(tech.brand === brand){

@@ -70,7 +70,7 @@ const Reviews = () => {
 
     return ( 
         <div className="review-container" onClick={closeSidebarTwo}
-         onMouseOver={closeSubmenu} >
+         onPointerOver={closeSubmenu} >
             <div onClick={searchDrop}>
             <h1>ADD A REVIEW</h1>
             <form className='form'>
