@@ -1,7 +1,7 @@
-import { useEffect } from "react";
+
 import { AppContext } from "../context/context";
 import { useContext } from "react";
-
+import { Link } from 'react-router-dom'
 
 const Search = () => {
     const { closeSubmenu, addToCart, searchArray, 
@@ -18,7 +18,8 @@ const Search = () => {
         {
             searchArray.map(tech => {
                 return (
-                    <div key={tech.id} className='product'>
+                    <Link to={`/details/${tech.id}`} key={tech.id} >
+                    <div className='product'>
                         <img src={tech.img} alt="" />
                         <p className="product-text">{tech.text}</p>
                         <div className="price-add">
@@ -29,6 +30,7 @@ const Search = () => {
                             </button>
                         </div>
                     </div>
+                    </Link>
                 )
             })
         }

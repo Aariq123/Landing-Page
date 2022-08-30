@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { AppContext } from "../context/context";
-
+import { Link } from 'react-router-dom'
 
 const Products = () => {
     const { cartItems, addToCart, closeSidebarTwo, closeSubmenu, searchDrop } = useContext(AppContext)
@@ -15,7 +15,8 @@ const Products = () => {
                 {cartItems.map(tech=> {
                 if(tech.catagory === category){
                     return (
-                        <div key={tech.id} className='product'>
+                        <Link to={`/details/${tech.id}`} key={tech.id} tech={tech}>
+                            <div className='product'>
                             <img src={tech.img} alt="" />
                             <p className="product-text">{tech.text}</p>
                             <div className="price-add">
@@ -26,6 +27,7 @@ const Products = () => {
                                 </button>
                             </div>
                         </div>
+                        </Link>
                     )
                 }
             })}

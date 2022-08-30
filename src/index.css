@@ -474,6 +474,10 @@ h1{
   display: none;
 }
 
+.product{
+  color: black;
+}
+
 @media (max-width:860px){
   .actual-links, .quick-links{
     transition: all .4s ease-in;

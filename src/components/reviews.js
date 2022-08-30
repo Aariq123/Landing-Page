@@ -124,7 +124,7 @@ const Reviews = () => {
 
                 <div className="review">
                     <div>
-                        <img src={require('../images/hehe.jpg')} alt="" />
+                        <img src='' alt="" />
                         <div>
                             <h1 className="review-title">Offended.....</h1>
                             <div className="rating">

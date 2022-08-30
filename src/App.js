@@ -12,6 +12,7 @@ import { useContext } from "react";
 import Brand from "./components/brand";
 import { AppContext } from "./context/context";
 import Search from "./components/search";
+import Details from "./components/search";
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
                       <Route path='/brands/:brand' element={<Brand></Brand>} ></Route>
                       <Route path='/cart' element={<Cart></Cart>} ></Route>
                       <Route path="/reviews" element={<Reviews></Reviews>}></Route>
+                      <Route path="/details/:id" element={<Details></Details>}></Route>
                 </Routes>
           <Footer></Footer>
         </BrowserRouter>
