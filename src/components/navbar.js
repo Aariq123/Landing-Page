@@ -12,23 +12,25 @@ const Navbar = () => {
         closeSidebar, closeSidebarTwo, submenuArray,
         setSubmenuShow, submenuShow, closeSubmenu,
         searching, searchBar, setUserSearch, searchDrop,
-        searchBarDrop, setSearchBarDrop
+        searchBarDrop, setSearchBarDrop, closeSidebarThree
     } = useContext(AppContext)
 
 
    
    const [ displayWidth, setDisplayWidth ] = useState(null)
+   const [ touchAvaliable, setTouchAvaliable ] = useState(null)
    const leftRef = useRef(null);
    const navRef = useRef(null)
    const actualLinksRef = useRef(null)
+   const catagories = [ 'laptop', 'desktop', 'software', 'tablet', 'camera', 'monitor']
    
-
+  
    useEffect(()=>{
         setDisplayWidth(navRef.current.clientWidth)
    },[navRef.current])
    
     const openHoverMenu = (e) => {
-        let word = e.target.textContent.toLowerCase()
+        let word = e.target.textContent
         if(displayWidth > 843 ){
             let position = e.target.offsetLeft;
             leftRef.current.style.left = `${position}px`
@@ -39,17 +41,26 @@ const Navbar = () => {
             let positionTop = e.target.offsetTop;
             leftRef.current.style.top = `${positionTop + 80}px`
         }
+        
         openSubmenu(word)
         setSubmenuShow(true)
     }
 
+    const openHoverMenuTouch = (e,name) => {
+        leftRef.current.style.left = `${actualLinksRef.current.clientWidth}px`
+        let positionTop = e.target.offsetTop;
+        leftRef.current.style.top = `${positionTop + 80}px`
+         openSubmenu(name)
+        setSubmenuShow(true)
+    }
 
-    return (
-        <nav onClick={closeSidebarTwo}ref={navRef}>
+
+    return ( 
+        <nav ref={navRef}  onTouchStart={()=>setTouchAvaliable(true)}>
         <div onClick={searchDrop}>
         <div className="header" onPointerOver={closeSubmenu}>
             <div className="heading">
-                <Link onClick={()=>setUserSearch(false)} to='/home'><img src={require('../images/tvector.jpg')} alt="" /></Link>
+                <Link onClick={()=>setUserSearch(false)} to='/Landing-Page/'><img src={require('../images/tvector.jpg')} alt="" /></Link>
                     <div className='search-div'>
                         <form>
                             <input type="text" 
@@ -64,7 +75,7 @@ const Navbar = () => {
                         </form>
                     </div>
             </div>
-            <div className={openNav ? 'quick-links open' : 'quick-links'} >
+            <div className={openNav ? 'quick-links sugma open' : 'quick-links sugma'} >
                 <Link onClick={()=>setUserSearch(false)} to='/reviews'>Reviews</Link>
                 <Link onClick={()=>setUserSearch(false)} to='/cart'>
                     <i className="fa-solid fa-bag-shopping">
@@ -77,17 +88,37 @@ const Navbar = () => {
             <i className={openNav ? 'fa-solid fa-xmark open' : 'fa-solid fa-xmark'} onClick={closeSidebar}></i>
             </div>
 
-            <div className={openNav ? 'actual-links open' : 'actual-links'} ref={actualLinksRef}>
-                <Link onClick={()=>setUserSearch(false)} className='link-list' onPointerOver={openHoverMenu}  to='/product/laptop'>Laptop</Link>
-                <Link onClick={()=>setUserSearch(false)} className='link-list' onPointerOver={openHoverMenu}  to='/product/tablet'>Tablet</Link>
-                <Link onClick={()=>setUserSearch(false)} className='link-list' onPointerOver={openHoverMenu}  to='/product/camera'>Camera</Link>
-                <Link onClick={()=>setUserSearch(false)} className='link-list' onPointerOver={openHoverMenu}  to='/product/software'>Software</Link>
-                <Link onClick={()=>setUserSearch(false)} className='link-list' onPointerOver={openHoverMenu} to='/product/monitor'>Monitor</Link>
-                <Link onClick={()=>setUserSearch(false)} className='link-list' onPointerOver={openHoverMenu}  to='/product/desktop'>Desktop</Link>
+            <div className={openNav ? 'actual-links sugma open' : 'actual-links sugma'} ref={actualLinksRef}>
+
+          
+
+                {!touchAvaliable &&
+                    catagories.map((item, i)=>{
+                        return (
+                            <Link key={i} onClick={()=>setUserSearch(false)} className='link-list' 
+                                onPointerOver={openHoverMenu}  to={`/product/${item}`}>
+                                {item}
+                            </Link>
+                        )
+                    })
+                }
+
+                {touchAvaliable &&
+                    catagories.map((item, i)=>{
+                        return (
+                            <div key={i} className='link-list sugma' >
+                                <Link onClick={()=>setUserSearch(false)}  to={`/product/${item}`}>
+                                    {item}
+                                </Link>
+                                <div className='sugma'><i onClick={(e)=>openHoverMenuTouch(e,item)} className="fa-solid fa-caret-right"></i> </div>
+                            </div>
+                        )
+                    })
+                }   
             </div>
 
             <div className={submenuShow ? "submenu show" : 'submenu'} ref={leftRef}>
-            <ul className='submenu-ul'>
+            <ul className='submenu-ul '>
                 {submenuArray.map((item,i)=>{
                     return(
                         <li key={i}><Link onClick={()=>setUserSearch(false)} to={`/brands/${item}`} >{item}</Link></li>

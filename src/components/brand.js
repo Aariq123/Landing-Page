@@ -9,6 +9,7 @@ const Brand = () => {
 
     return ( 
        <div onClick={closeSidebarTwo} onPointerOver={closeSubmenu} >
+        <h1>All Products from {brand}</h1>
             <div className="products-container">
                 {cartItems.map(tech=> {
                 if(tech.brand === brand){

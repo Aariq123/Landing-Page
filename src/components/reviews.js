@@ -152,7 +152,6 @@ const Reviews = () => {
                        return(
                             <div className="review" key={id}>
                             <div>
-                                <img src={require('../images/tvector.jpg')} alt="" />
                                 <div>
                                     <h1 className="review-title">{title}</h1>
                                     <div className="rating" >

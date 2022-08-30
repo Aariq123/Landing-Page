@@ -3,7 +3,7 @@ import "./index.css"
 import Footer from "./components/footer";
 
 import Navbar from "./components/navbar";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Products from "./components/products";
 import Cart from "./components/cart";
 import Hero from './components/hero'
@@ -21,27 +21,27 @@ function App() {
     if(userSearch){
       return(
        <>
-       <Router>
+       <BrowserRouter>
         <Navbar></Navbar>
         <Search></Search>
         <Footer></Footer>
-       </Router>
+       </BrowserRouter>
       </>
       )
     }
     else{
       return (
-        <Router>
+        <BrowserRouter>
         <Navbar></Navbar>
                 <Routes>
-                      <Route path='/home' element={<Hero></Hero>} ></Route>
+                      <Route path='/Landing-Page/' element={<Hero></Hero>} ></Route>
                       <Route path='/product/:category' element={<Products></Products>} ></Route>
                       <Route path='/brands/:brand' element={<Brand></Brand>} ></Route>
                       <Route path='/cart' element={<Cart></Cart>} ></Route>
                       <Route path="/reviews" element={<Reviews></Reviews>}></Route>
                 </Routes>
           <Footer></Footer>
-        </Router>
+        </BrowserRouter>
       );
     }
 }

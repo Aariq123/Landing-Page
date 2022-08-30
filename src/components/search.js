@@ -4,13 +4,16 @@ import { useContext } from "react";
 
 
 const Search = () => {
-    const { closeSubmenu, addToCart, searchArray, searchDrop, closeSidebarTwo} = useContext(AppContext)
+    const { closeSubmenu, addToCart, searchArray, 
+        searchDrop, closeSidebarTwo, searchBar
+    } = useContext(AppContext)
     
 
 
     return ( 
        <div className="search-div" onPointerOver={closeSubmenu} onClick={searchDrop}>
         <div onClick={closeSidebarTwo}>
+        <h1>Results for '{searchBar}'</h1>
         <div className="products-container">
         {
             searchArray.map(tech => {

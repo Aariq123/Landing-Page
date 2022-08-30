@@ -5,6 +5,8 @@ import techs from "../data";
 export const AppContext = createContext();
 
 
+
+
 const initialState = {
     cart:[],
     cartItems:techs,
@@ -138,11 +140,20 @@ export const AppProvider = ({children})=>{
 
     const closeSidebarTwo = (e) => {
         if(state.openNav === true){
-            if(!e.target.classList.contains('quick-links open')){
+            if(!e.target.classList.contains('actual-links open')){
                 closeSidebar()
             }
         }
     }
+
+    const closeSidebarThree = (e) => {
+        if(state.openNav === true){
+            if(!e.target.classList.contains('sugma')){
+                closeSidebar()
+            }
+        }
+    }
+
 
     const openSubmenu = (category) => {
         dispatch({type:'OPEN_SUBMENU', payload:category})
@@ -185,6 +196,7 @@ export const AppProvider = ({children})=>{
         closeSidebar, 
         openSidebar,
         closeSidebarTwo,
+        closeSidebarThree,
         openSubmenu,
         setSubmenuShow,
         closeSubmenu,

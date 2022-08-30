@@ -93,8 +93,11 @@ a:hover{
 .actual-links a{
   padding: 7px 9px;
   width:16.66%;
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
 }
+
+
 
 .actual-links a:hover{
   background-color: white;
@@ -459,6 +462,18 @@ h1{
   visibility: visible;
 }
 
+.link-list{
+  display: flex;
+}
+
+.link-list i {
+  color: white;
+}
+
+.fa-solid.fa-caret-down.none{
+  display: none;
+}
+
 @media (max-width:860px){
   .actual-links, .quick-links{
     transition: all .4s ease-in;
@@ -468,8 +483,9 @@ h1{
     top: 80px;
     transform: translateX(-122%);
     width: 50%;
-    padding: 5px;
+    padding: 5px 0;
     border-right: 2px solid orangered;
+    z-index: 100;
   }
 
   .submenu{
